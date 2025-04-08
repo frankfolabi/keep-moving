@@ -1,0 +1,12 @@
+# Docker compose to start the app
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask-quotes
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
