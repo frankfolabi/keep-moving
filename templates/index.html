@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inspirational</title>
+    <title>Inspire Yourself</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -53,11 +53,28 @@
 </head>
 <body>
     <div class="container">
-        <h1>🌟 Daily Inspiration To Keep Going</h1>
+        <h1>🌟 Daily Inspiration</h1>
         <blockquote id="quote">"{{ quote }}"</blockquote>
-        <form method="GET" action="/">
-            <button type="submit">✨ New Quote</button>
-        </form>
+        <button id="newQuoteBtn">✨ New Quote</button>
     </div>
+
+    <script>
+        // Function to fetch a new quote
+        document.getElementById("newQuoteBtn").addEventListener("click", function() {
+            fetch("/")
+                .then(response => response.text())
+                .then(html => {
+                    // Extract the new quote from the returned HTML
+                    let quoteStart = html.indexOf('"') + 1;
+                    let quoteEnd = html.indexOf('"', quoteStart);
+                    let newQuote = html.substring(quoteStart, quoteEnd);
+
+                    // Update the quote displayed on the page
+                    document.getElementById("quote").textContent = `"${newQuote}"`;
+                })
+                .catch(error => console.log("Error fetching new quote: ", error));
+        });
+    </script>
 </body>
 </html>
+
