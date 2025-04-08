@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, jsonify, render_template
 import random
 
 app = Flask(__name__)
@@ -106,10 +106,15 @@ quotes = [
     "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
 ]
 
-@app.route('/')
-def home():
-    quote = random.choice(quotes)
-    return render_template('index.html', quote=quote)
+@app.route("/")
+def index():
+    return render_template("index.html", quote=random.choice(quotes))
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+@app.route("/quote")
+def quote():
+    return jsonify({"quote": random.choice(quotes)})
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0")
+
+

@@ -52,29 +52,22 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🌟 Daily Inspiration</h1>
-        <blockquote id="quote">"{{ quote }}"</blockquote>
-        <button id="newQuoteBtn">✨ New Quote</button>
-    </div>
+  <h1>🌟 Inspire Yourself Today</h1>
+  <div id="quote-box">{{ quote }}</div>
+  <button onclick="getQuote()">New Quote</button>
 
-    <script>
-        // Function to fetch a new quote
-        document.getElementById("newQuoteBtn").addEventListener("click", function() {
-            fetch("/")
-                .then(response => response.text())
-                .then(html => {
-                    // Extract the new quote from the returned HTML
-                    let quoteStart = html.indexOf('"') + 1;
-                    let quoteEnd = html.indexOf('"', quoteStart);
-                    let newQuote = html.substring(quoteStart, quoteEnd);
-
-                    // Update the quote displayed on the page
-                    document.getElementById("quote").textContent = `"${newQuote}"`;
-                })
-                .catch(error => console.log("Error fetching new quote: ", error));
-        });
-    </script>
+  <script>
+    async function getQuote() {
+      try {
+        const response = await fetch('/quote');
+        const data = await response.json();
+        document.getElementById('quote-box').textContent = data.quote;
+      } catch (err) {
+        console.error('Failed to fetch quote:', err);
+      }
+    }
+  </script>
 </body>
 </html>
+
 
