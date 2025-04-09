@@ -1,5 +1,5 @@
-output "ecs_service_url" {
-  value = "http://<ECS-public-IP>:5000"
-  description = "URL to access the deployed Flask app"
+output "alb_dns_name" {
+  description = "The DNS name of the Application Load Balancer"
+  value       = module.alb.dns_name
 }
 

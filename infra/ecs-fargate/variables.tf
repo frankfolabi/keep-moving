@@ -8,6 +8,6 @@ variable "docker_image" {
 }
 
 variable "cluster_name" {
-  default = "get-inspired-quotes-cluster"
+  default = "flask-quotes-cluster"
 }
 

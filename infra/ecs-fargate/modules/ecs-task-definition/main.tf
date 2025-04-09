@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "flask_app" {
 
   container_definitions = jsonencode([
     {
-      name      = "get-inspired-quotes"
+      name      = "flask-quotes"
       image     = var.docker_image
       essential = true
       portMappings = [

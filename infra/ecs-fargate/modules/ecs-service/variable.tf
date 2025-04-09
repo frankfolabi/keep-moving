@@ -1,10 +1,10 @@
-variable "service_name" {
+variable "name" {
   description = "The name of the ECS service"
   type        = string
 }
 
-variable "cluster_id" {
-  description = "The ECS cluster ID"
+variable "cluster_arn" {
+  description = "The ARN of the ECS cluster"
   type        = string
 }
 
@@ -13,18 +13,38 @@ variable "task_definition_arn" {
   type        = string
 }
 
-variable "subnets" {
-  description = "List of subnets for the ECS service"
+variable "subnet_ids" {
+  description = "List of subnet IDs for the ECS service"
   type        = list(string)
 }
 
-variable "security_groups" {
-  description = "List of security groups for the ECS service"
+variable "security_group_ids" {
+  description = "List of security group IDs"
   type        = list(string)
 }
 
-variable "iam_role_policy_attachment" {
-  description = "The IAM role policy attachment"
+variable "desired_count" {
+  description = "Number of desired ECS tasks"
+  type        = number
+}
+
+variable "target_group_arn" {
+  description = "Target Group ARN for the ALB"
+  type        = string
+}
+
+variable "container_name" {
+  description = "Name of the container in the task definition"
+  type        = string
+}
+
+variable "container_port" {
+  description = "Port exposed by the container"
+  type        = number
+}
+
+variable "listener_arn" {
+  description = "ARN of the ALB listener to be used with the ECS service"
   type        = string
 }
 

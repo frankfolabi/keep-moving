@@ -11,7 +11,8 @@ It is a work in progress to give me motivation and get going on my DevOps journe
 
 ## Preview
 
-![screenshot](./screenshots/app_preview.png)
+![screenshot](./screenshots/dark-mode.png)
+![screenshot](./screenshots/light-mode.png)
 
 ---
 
@@ -59,4 +60,22 @@ terraform init
 terraform plan
 terraform apply
 ```
+
+# Future Features 
+
+- [] User Authentication & Profiles
+- [] Dynamic Quote Generation with Backend API
+- [] Real-time Quote Push (WebSocket)
+- [] Quote Voting System
+- [] Search & Filter Quotes
+- [] Quote Categories or Tags
+- [] Customizable Quote Display 
+- [] Automated Quote of the Day
+- [] API for Third-Party Integrations
+- [] Email Notifications 
+- [] Admin Panel for Managing Quotes
+- [] Social Media Sharing
+- [] Quote Analytics Dashboard
+- [] Responsive Design Enhancements
+- [] Unit Testing
 
