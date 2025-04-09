@@ -1,0 +1,39 @@
+# Python related files and execution
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+env/
+
+# Flask database created locally 
+instance/
+*.db
+*.sqlite3
+
+# Docker file logs
+*.log
+docker-compose.override.yml
+
+# Terraform directories and variables
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+# .terraform.lock.hcl  # Optional: keep this if you want consistent provider versions
+
+# GitHub Actions logs or temporary outputs (if any workflows generate)
+*.testlog
+
+
+
