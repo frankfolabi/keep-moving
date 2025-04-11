@@ -26,7 +26,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: container/
+        context: containers/
         file: containers/Dockerfile
         push: true
         tags: frankfolabi/flask-quotes:latest
