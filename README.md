@@ -44,8 +44,8 @@ You can run the app locally if you have Docker installed in your machine or you 
 ### 1. To run locally, clone the repository
 
 ```
-git clone https://github.com/frankfolabi/learn-cicd.git
-cd learn-cicd/container
+git clone https://github.com/frankfolabi/keep-moving.git
+cd keep-moving/container
 ```
 
 ### 2. Build and Run with Docker Compose
@@ -64,6 +64,7 @@ terraform plan
 terraform apply
 ```
 Visit the output of the ALB DNS
+
 ---
 # Future Features 
 
