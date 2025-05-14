@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Authentication Buttons -->
+  <div class="auth-buttons">
+    <button id="loginBtn">Login</button>
+    <button id="registerBtn">Register</button>
+  </div>
+
+  <div class="container">
+    <h2>Register</h2>
+    <form method="POST">
+      <input type="text" name="username" placeholder="Username" required><br>
+
+      <input type="email" name="email"placeholder="Email" required><br>
+
+      <input type="password" name="password" placeholder="Password" required><br>
+
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="/login">Log in</a></p>
+  </div>
+
+  <script>
+    // Redirect to the login or register page
+    document.getElementById("loginBtn").addEventListener("click", function() {
+      window.location.href = "/login";  // Redirect to login page
+    });
+
+    document.getElementById("registerBtn").addEventListener("click", function() {
+      window.location.href = "/register";  // Redirect to register page
+    });
+  </script>
+
+</body>
+</html>
+

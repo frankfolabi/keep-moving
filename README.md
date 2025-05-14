@@ -84,4 +84,5 @@ Working to add complexity and practice more DevOps tools and principles withthe 
 - [ ] Quote Analytics Dashboard
 - [ ] Responsive Design Enhancements
 - [ ] Unit Testing
+- [ ] Add Pidgin Quotes
 ---

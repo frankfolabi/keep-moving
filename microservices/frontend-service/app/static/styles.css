@@ -1,0 +1,141 @@
+/* Root Variables: Default styling */
+:root {
+  --bg-gradient: linear-gradient(to right, #667eea, #764ba2); /* Background gradient */
+  --container-bg: rgba(255, 255, 255, 0.1); /* Container background */
+  --text-color: #fff; /* Text color */
+  --button-bg: #fff; /* Button background */
+  --button-text: #764ba2; /* Button text color */
+  --button-hover: #f1f1f1; /* Button hover color */
+}
+
+/* Dark Mode Overrides */
+body.dark {
+  --bg-gradient: linear-gradient(to right, #1e1e1e, #2c2c2c); /* Dark background gradient */
+  --container-bg: rgba(255, 255, 255, 0.05); /* Dark container background */
+  --text-color: #e0e0e0; /* Light text color */
+  --button-bg: #333; /* Dark button background */
+  --button-text: #fff; /* White button text */
+  --button-hover: #444; /* Dark button hover */
+}
+
+/* General Body Styling */
+body {
+  font-family: 'Segoe UI', sans-serif; /* Font style */
+  background: var(--bg-gradient); /* Background gradient */
+  color: var(--text-color); /* Text color */
+  text-align: center; /* Center-align text */
+  margin: 0;
+  padding: 0;
+  transition: background 0.4s ease, color 0.4s ease; /* Smooth transition for background and text color */
+}
+
+/* Container Styling */
+.container {
+  max-width: 700px; /* Max width for content */
+  margin: 100px auto; /* Centering container */
+  background: var(--container-bg); /* Background color for container */
+  padding: 40px; /* Padding inside the container */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Main Heading Styling */
+h1 {
+  font-size: 2.5rem; /* Heading size */
+  margin-bottom: 20px; /* Bottom margin */
+}
+
+/* Blockquote Styling */
+blockquote {
+  font-size: 1.5rem; /* Quote size */
+  font-style: italic; /* Italic text */
+  margin: 30px 0; /* Margin around quote */
+  line-height: 1.6; /* Line height for readability */
+}
+
+/* Button Styling */
+button {
+  background: var(--button-bg); /* Button background */
+  color: var(--button-text); /* Button text color */
+  border: none; /* No border */
+  padding: 12px 24px; /* Button padding */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  border-radius: 30px; /* Rounded button corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease, color 0.3s ease; /* Transition on hover */
+  margin: 8px; /* Margin around button */
+}
+
+/* Button Hover Effect */
+button:hover {
+  background: var(--button-hover); /* Hover background */
+}
+
+/* Positioning the Login and Register Buttons */
+.auth-buttons {
+  position: absolute; /* Absolute positioning */
+  top: 20px; /* Distance from top */
+  right: 20px; /* Distance from right */
+  display: flex; /* Flexbox layout */
+  gap: 15px; /* Gap between buttons */
+}
+
+.auth-buttons button {
+  font-size: 0.9rem; /* Font size for buttons */
+  padding: 8px 16px; /* Padding inside buttons */
+  border-radius: 30px; /* Rounded button corners */
+}
+
+/* Responsive Design for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+  .container {
+    margin: 50px auto; /* Margin adjustment for smaller screens */
+    padding: 30px; /* Adjusted padding */
+  }
+
+  h1 {
+    font-size: 2rem; /* Smaller heading font size */
+  }
+
+  blockquote {
+    font-size: 1.2rem; /* Smaller quote font size */
+  }
+
+  button {
+    padding: 10px 20px; /* Adjusted padding */
+    font-size: 0.9rem; /* Smaller font size for buttons */
+  }
+
+  .auth-buttons button {
+    font-size: 0.8rem; /* Smaller font size for buttons */
+    padding: 6px 12px; /* Adjusted padding for smaller screens */
+  }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 480px) {
+  .container {
+    margin: 30px auto; /* Margin adjustment for mobile */
+    padding: 20px; /* Smaller padding */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Smaller heading font size */
+  }
+
+  blockquote {
+    font-size: 1.1rem; /* Smaller quote font size */
+  }
+
+  button {
+    padding: 8px 18px; /* Adjusted button padding */
+    font-size: 0.8rem; /* Smaller font size */
+  }
+
+  .auth-buttons button {
+    font-size: 0.7rem; /* Smaller button text for mobile */
+    padding: 6px 10px; /* Smaller padding for mobile buttons */
+  }
+}
+

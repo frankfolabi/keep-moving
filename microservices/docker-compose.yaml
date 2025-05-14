@@ -1,0 +1,21 @@
+# This Docker Compose is to build all the services to containers
+
+services:
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "5001:5000"
+
+  quotes-service:
+    build: ./quotes-service
+    ports:
+      - "5002:5000"
+
+  frontend-service:
+    build: ./frontend-service
+    ports:
+      - "5003:5000"
+    depends_on:
+      - auth-service
+      - quotes-service
+

@@ -1,6 +1,6 @@
 # To build and push the image to Docker Hub
 
-name: Build & Push Docker Image
+name: Build, Push and Deploy to ECS
 
 on:
   push:
@@ -31,3 +31,17 @@ jobs:
         push: true
         tags: frankfolabi/flask-quotes:latest
 
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1 
+
+    - name: Force new ECS deployment
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        cluster: flask-quotes-cluster           
+        service: flask-quotes-task          
+        task-definition: flask-quotes-cluster
+        force-new-deployment: true
